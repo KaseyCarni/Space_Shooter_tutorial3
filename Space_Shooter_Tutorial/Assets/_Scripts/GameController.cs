@@ -19,11 +19,11 @@ public class GameController : MonoBehaviour {
 
     public float waveWait;
 
-    public GUIText scoreText;
+    public Text scoreText;
 
-    public GUIText restartText;
+    public Text restartText;
 
-    public GUIText gameOverText;
+    public Text gameOverText;
 
 
     private int score;
@@ -59,6 +59,12 @@ public class GameController : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey("escape"))
+            Application.Quit();
     }
 
     IEnumerator SpawnWaves()
